@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { StudentComponent } from './student/student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeacherComponent
+    TeacherComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent, TeacherComponent]
+  bootstrap: [AppComponent, TeacherComponent, StudentComponent]
 })
 export class AppModule { }
