@@ -7,6 +7,9 @@ import { Student } from '../_models/student';
   styleUrls: ['./students-list.component.css']
 })
 export class StudentsListComponent {
+  add(newStudent:Student){
+    this.students.push(newStudent);
+  }
   students:Student[]=[
     new Student(1,"Ahmed",8),
     new Student(2,"Khaled",10),

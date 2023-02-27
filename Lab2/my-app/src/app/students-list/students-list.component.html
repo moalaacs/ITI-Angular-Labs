@@ -1,11 +1,6 @@
 <div class="container min-vh-100 d-flex justify-content-center">
-  <div class="col-10 col-md-8 col-lg-6 shadow p-4 bg-white rounded">
-    <div class="form-group d-flex flex-row mb-4">
-      <input type="text" class="form-control mx-2" />
-      <input type="text" class="form-control mx-2" />
-      <input type="text" class="form-control mx-2" />
-      <button class="btn btn-success">Add</button>
-    </div>
+  <div class="col-10 col-md-8 col-lg-6 shadow p-4 bg-white rounded my-5">
+    <app-add-student (onStudentAdded)="add($event)"></app-add-student>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -13,6 +8,8 @@
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +17,8 @@
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.age }}</td>
+            <td>🪄</td>
+            <td>🗑️</td>
           </tr>
         </tbody>
       </table>
