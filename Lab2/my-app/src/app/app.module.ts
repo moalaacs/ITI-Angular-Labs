@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StudentsListComponent } from './students-list/students-list.component';
@@ -14,7 +15,7 @@ import { EditStudentComponent } from './students-list/edit-student/edit-student.
     EditStudentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

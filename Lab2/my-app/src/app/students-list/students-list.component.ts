@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from '../_models/student';
 
 @Component({
   selector: 'app-students-list',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./students-list.component.css']
 })
 export class StudentsListComponent {
-
+  students:Student[]=[
+    new Student(1,"Ahmed",8),
+    new Student(2,"Khaled",10),
+    new Student(2,"Gamal",9),
+    new Student(2,"Ali",8),
+  ];
 }
