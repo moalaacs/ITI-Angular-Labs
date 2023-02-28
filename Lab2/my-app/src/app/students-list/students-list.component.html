@@ -1,6 +1,7 @@
 <div class="container min-vh-100 d-flex justify-content-center">
   <div class="col-10 col-md-8 col-lg-6 shadow p-4 bg-white rounded my-5">
     <app-add-student (onStudentAdded)="add($event)"></app-add-student>
+    <app-edit-student (onStudentEdited)="edit($event)"></app-edit-student>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -17,7 +18,7 @@
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.age }}</td>
-            <td>🪄</td>
+            <td (click)="edit(item)">🪄</td>
             <td (click)="delete(item.id)">🗑️</td>
           </tr>
         </tbody>

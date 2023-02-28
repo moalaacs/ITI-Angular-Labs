@@ -14,6 +14,19 @@ export class StudentsListComponent {
     console.log(id);
     this.students=this.students.filter(std=>std.id !== id);
   }
+  edit(student:Student){
+    let index = this.students.findIndex(std=>std.id==student.id);
+    if(student.id>0)
+    {
+      this.students[index].id = student.id;
+      this.students[index].name = student.name;
+      this.students[index].age = student.age;
+      console.log(student);
+    }
+    else {
+      alert("Not valid id")
+    }
+  }
   students:Student[]=[
     new Student(1,"Ahmed",8),
     new Student(2,"Khaled",10),
