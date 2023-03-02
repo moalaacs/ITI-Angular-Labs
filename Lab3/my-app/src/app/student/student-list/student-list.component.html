@@ -1,1 +1,29 @@
-<p>student-list works!</p>
+<div class="container d-flex justify-content-center">
+  <!-- col-10 col-md-8 col-lg-6 -->
+  <div class="shadow p-4 bg-white rounded my-5">
+    <app-student-add (onStudentAdded)="add($event)"></app-student-add>
+    <app-student-edit (onStudentEdited)="edit($event)"></app-student-edit>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of students; let i = index">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.age }}</td>
+            <td (click)="edit(item)">🪄</td>
+            <td (click)="delete(item.id)">🗑️</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

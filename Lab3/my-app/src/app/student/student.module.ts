@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentListComponent } from './student-list/student-list.component';
 import { StudentAddComponent } from './student-add/student-add.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { FormsModule } from '@angular/forms';
+import { StudentEditComponent } from './student-edit/student-edit.component'
 
 
 
 @NgModule({
   declarations: [
     StudentListComponent,
-    StudentAddComponent
+    StudentAddComponent,
+    StudentEditComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,FormsModule
   ],
   exports:[
-    StudentListComponent
+    StudentListComponent,StudentAddComponent,StudentEditComponent
   ]
 })
 export class StudentModule { }
