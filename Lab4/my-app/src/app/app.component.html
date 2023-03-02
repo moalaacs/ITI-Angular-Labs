@@ -11,8 +11,13 @@
   <div id="content" style="width: 800px">
     <app-header></app-header>
     <div id="contenttext">
-      <!-- <app-student-list></app-student-list> -->
-      <app-course-list></app-course-list>
+      <!-- <app-student-list></app-student-list>
+      <app-student-add></app-student-add> -->
+      <!-- <app-course-list></app-course-list> -->
+      <a routerLink="/add">Add |</a>
+      <a routerLink="/list">List |</a>
+      <a routerLink="/about">About</a>
+      <router-outlet></router-outlet>
     </div>
     <app-panel></app-panel>
     <app-footer></app-footer>

@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Student } from '../_models/student';
+import { StudentService } from 'src/app/_services/student.service';
 
 @Component({
   selector: 'app-students-list',
   templateUrl: './students-list.component.html',
-  styleUrls: ['./students-list.component.css']
+  styleUrls: ['./students-list.component.css'],
+  // providers: [StudentService]
 })
 export class StudentsListComponent {
-  add(newStudent:Student){
-    this.students.push(newStudent);
-  }
+  // add(newStudent:Student){
+  //   this.students.push(newStudent);
+  // }
   delete(id:number){
     console.log(id);
     this.students=this.students.filter(std=>std.id !== id);

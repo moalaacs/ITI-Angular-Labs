@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { StudentService } from 'src/app/_services/student.service';
 import { Student } from '../../_models/student';
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
+  styleUrls: ['./student-list.component.css'],
+  // providers: [StudentService]
 })
 export class StudentListComponent {
-  add(newStudent:Student){
-    this.students.push(newStudent);
-  }
+  // add(newStudent:Student){
+  //   this.students.push(newStudent);
+  // }
   delete(id:number){
     console.log(id);
     this.students=this.students.filter(std=>std.id !== id);
@@ -27,10 +29,11 @@ export class StudentListComponent {
       alert("Not valid id")
     }
   }
-  students:Student[]=[
-    new Student(1,"Ahmed",8),
-    new Student(2,"Khaled",10),
-    new Student(3,"Gamal",9),
-    new Student(4,"Ali",8),
-  ];
+  students:Student[]=[];
+
+  constructor(public studentService:StudentService){}
+
+  ngOnInit(){
+    this.students = this.studentService.getAll();
+  }
 }
