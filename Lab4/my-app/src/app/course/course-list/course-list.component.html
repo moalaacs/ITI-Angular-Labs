@@ -1,0 +1,28 @@
+<app-course-add (onCourseAdded)="saveToList($event)"></app-course-add>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Course ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of courses" class="">
+        <td>{{ item.courseID }}</td>
+        <td>{{ item.courseName }}</td>
+        <td>{{ item.duration }}</td>
+        <td>
+          {{ item.rate }}
+          <app-rate [rating]="item.rate"></app-rate>
+        </td>
+
+        <td (click)="courseDetails = item">🪄</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-course-details [course]="courseDetails"></app-course-details>
