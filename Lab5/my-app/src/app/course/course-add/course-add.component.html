@@ -1,0 +1,19 @@
+<div class="form-group d-flex flex-row mb-4">
+  <input
+    type="text"
+    class="form-control mx-2"
+    [(ngModel)]="newCourse.courseID"
+  />
+  <input
+    type="text"
+    class="form-control mx-2"
+    [(ngModel)]="newCourse.courseName"
+  />
+  <input
+    type="text"
+    class="form-control mx-2"
+    [(ngModel)]="newCourse.duration"
+  />
+  <input type="text" class="form-control mx-2" [(ngModel)]="newCourse.rate" />
+  <button class="btn btn-success" (click)="save()">Add</button>
+</div>
