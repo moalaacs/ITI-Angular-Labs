@@ -1,0 +1,11 @@
+<div class="form-group d-flex flex-row my-2">
+  <input type="text" class="form-control mx-2" [(ngModel)]="department._id">
+  <input type="text" class="form-control mx-2" [(ngModel)]="department.name">
+  <select class="form-control mx-2" [(ngModel)]="department.location">
+    <option>Smart</option>
+    <option>Mansoura</option>
+    <option>Alex</option>
+    <option>Cairo</option>
+  </select>
+  <button class="form-control btn btn-success " (click)="update(department)">Update</button>
+</div>

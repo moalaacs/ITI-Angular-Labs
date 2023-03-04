@@ -18,6 +18,7 @@ import { DepartmentModule } from './department/department.module';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentAddComponent } from './department/department-add/department-add.component';
 import { DepartmentDetailsComponent } from './department/department-details/department-details.component';
+import { DepartmentUpdateComponent } from './department/department-update/department-update.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'departments', component: DepartmentListComponent },
   { path: 'departments/add', component: DepartmentAddComponent },
   { path: 'departments/details/:id',component:DepartmentDetailsComponent},
+  { path: 'departments/update/:id',component:DepartmentUpdateComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

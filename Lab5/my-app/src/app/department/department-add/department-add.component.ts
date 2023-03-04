@@ -14,9 +14,14 @@ export class DepartmentAddComponent {
     
   }
   save(){
-    this.departmentService.addDepartment(this.department).subscribe(data=>{
-      console.log(data);
-      this.router.navigateByUrl("/departments")
-    })
+    if(this.department._id>0 && this.department.name.length!=0&&this.department.location.length!=0){
+      this.departmentService.addDepartment(this.department).subscribe(data=>{
+        console.log(data);
+        this.router.navigateByUrl("/departments")
+      })
+    }
+    else{
+      alert("Not valid data");
+    }
   }
 }

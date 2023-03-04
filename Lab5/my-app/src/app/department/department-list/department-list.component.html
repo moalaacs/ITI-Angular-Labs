@@ -8,6 +8,7 @@
         <th scope="col">Name</th>
         <th scope="col">Location</th>
         <th scope="col">Details</th>
+        <th scope="col">Update</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -18,6 +19,9 @@
         <td>{{item.location}}</td>
         <td>
           <a [routerLink]="['/departments','details',item._id]">Details</a>
+        </td>
+        <td>
+          <a [routerLink]="['/departments','update',item._id]">Update</a>
         </td>
         <td (click)="delete(item._id)">🗑️</td>
       </tr>
