@@ -1,0 +1,26 @@
+<hr>
+<a routerLink="/departments/add">Add</a>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Details</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of departments" class="">
+        <td>{{item._id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.location}}</td>
+        <td>
+          <a [routerLink]="['/departments','details',item._id]">Details</a>
+        </td>
+        <td (click)="delete(item._id)">🗑️</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
