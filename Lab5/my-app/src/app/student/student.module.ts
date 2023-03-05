@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { StudentAddComponent } from './student-add/student-add.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { FormsModule } from '@angular/forms';
-import { StudentEditComponent } from './student-edit/student-edit.component'
+import { StudentDetailsComponent } from './student-details/student-details.component'
+import { RouterLink } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+import { StudentUpdateComponent } from './student-update/student-update.component';
 
 
 
@@ -11,13 +14,14 @@ import { StudentEditComponent } from './student-edit/student-edit.component'
   declarations: [
     StudentListComponent,
     StudentAddComponent,
-    StudentEditComponent
+    StudentDetailsComponent,
+    StudentUpdateComponent
   ],
   imports: [
-    CommonModule,FormsModule
+    CommonModule,FormsModule,RouterLink,AppRoutingModule
   ],
   exports:[
-    StudentListComponent,StudentAddComponent,StudentEditComponent
+    StudentListComponent,StudentAddComponent
   ]
 })
 export class StudentModule { }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Department } from 'src/app/_models/department';
 import { StudentService } from 'src/app/_services/student.service';
 import { Student } from '../../_models/student';
 
@@ -9,9 +10,10 @@ import { Student } from '../../_models/student';
   // providers: [StudentService]
 })
 export class StudentAddComponent {
-  newStudent:Student = new Student(0,"",0);
-  constructor(public studentService:StudentService){}
-  save(){
-    this.studentService.add(this.newStudent)
+  student: Student = new Student(0, "", {} as Department);
+
+  constructor(public studentService: StudentService) { }
+  save() {
+    this.studentService.addStudent(this.student).subscribe()
   }
 }

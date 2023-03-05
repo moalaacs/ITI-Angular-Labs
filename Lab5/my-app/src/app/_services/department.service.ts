@@ -15,16 +15,16 @@ export class DepartmentService {
   getAllDepartments() {
     return this.http.get<Department[]>(this.baseUrl);
   }
-  addDepartment(department:Department){
-   return this.http.post<Department>(this.baseUrl,department);
+  addDepartment(department: Department) {
+    return this.http.post<Department>(this.baseUrl, department);
   }
-  getDepartmentById(id:number){
-    return this.http.get<Department>(this.baseUrl+id);
+  getDepartmentById(id: number) {
+    return this.http.get<Department>(this.baseUrl + id);
   }
-  deleteById(id:number){
-    return this.http.delete(this.baseUrl+id);
+  deleteById(id: number) {
+    return this.http.delete(this.baseUrl + id);
   }
-  update(department:Department){
-    return this.http.put(this.baseUrl+department._id,department);
+  update(department: Department) {
+    return this.http.patch(this.baseUrl + department._id, department);
   }
 }

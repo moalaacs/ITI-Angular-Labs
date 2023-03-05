@@ -12,7 +12,7 @@ const controller=require("./../Controllers/departmentsController")
      .isLength({max:10}).withMessage("departemnt name length <10")
  ],controller.createDepartment);
  
- router.put("/:id",controller.updateDepartment);
+ router.patch("/:id",controller.updateDepartment);
  
  router.delete("/:id",controller.deleteDepartment);
 

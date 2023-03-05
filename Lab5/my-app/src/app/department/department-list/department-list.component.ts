@@ -9,8 +9,9 @@ import { DepartmentService } from 'src/app/_services/department.service';
   styleUrls: ['./department-list.component.css'],
 })
 export class DepartmentListComponent {
-  departments: Department[] = [];
   constructor(public departmentService: DepartmentService, public router:Router) {}
+  departments: Department[] = [];
+  
   ngOnInit() {
     this.departmentService.getAllDepartments().subscribe((data) => {
       this.departments = data;
